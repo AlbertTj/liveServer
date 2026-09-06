@@ -29,7 +29,7 @@ async fn main() -> std::io::Result<()> {
     println!("PORT: {}", port);
     println!("______________________________________________");
     HttpServer::new(|| App::new().service(Files::new("/", "./static").index_file("index.html")))
-        .bind(("127.0.0.1", port))?
+        .bind(("0.0.0.0", port))?
         .run()
         .await
 }
